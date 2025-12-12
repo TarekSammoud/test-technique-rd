@@ -95,6 +95,8 @@
 .username-form {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     gap: 12px;
     margin-bottom: 20px;
 }
