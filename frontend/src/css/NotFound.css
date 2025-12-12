@@ -1,0 +1,53 @@
+.notfound-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.notfound-card {
+  background: #111;
+  padding: 30px 25px;
+  max-width: 400px;
+  width: 90%;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(255,255,255,0.1);
+  text-align: center;
+  color: #fff;
+  animation: popIn 0.5s ease-out;
+}
+
+.notfound-title {
+  font-size: 64px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.notfound-text {
+  font-size: 18px;
+  opacity: 0.85;
+  margin-bottom: 25px;
+}
+
+.notfound-btn {
+  background: #00c853;
+  border: none;
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.notfound-btn:hover {
+  background: #00e676;
+  transform: scale(1.05);
+}
+
+

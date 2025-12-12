@@ -1,0 +1,159 @@
+.gameover-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.4s ease-out;
+  z-index: 9999;
+}
+
+.gameover-card {
+  background: #111;
+  padding: 25px;
+  width: 90%;
+  max-width: 420px;
+  border-radius: 14px;
+  box-shadow: 0 0 25px rgba(255,255,255,0.1);
+  color: white;
+  text-align: center;
+  animation: fadeInScale 0.5s ease-out;
+}
+
+.gameover-title {
+  font-size: 26px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 12px #00c853;
+  animation: glowPulse 1.5s infinite;
+}
+
+.gameover-text {
+  opacity: 0.9;
+  margin-bottom: 15px;
+}
+
+.gameover-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.stat-box {
+  background: #222;
+  padding: 12px 20px;
+  border-radius: 10px;
+  width: 40%;
+  animation: fadeInScale 0.5s ease-out;
+}
+
+.stat-box .label {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.stat-box .value {
+  display: block;
+  font-size: 22px;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+.restart-btn {
+  background: #00c853;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 20px;
+  transition: 0.2s;
+}
+
+.restart-btn:hover {
+  background: #00e676;
+  transform: scale(1.05);
+}
+
+.scoreboard-title {
+  margin: 10px 0;
+  font-size: 20px;
+}
+
+
+.username-form {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.username-form input {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 2px solid #444;
+  background: #111;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.username-form input::placeholder {
+  color: #888;
+}
+
+.username-form input:focus {
+  border-color: #00c853;
+  box-shadow: 0 0 12px #00c85388;
+}
+
+.username-form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #00c853;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.username-form button:hover {
+  background: #00e676;
+  transform: scale(1.05);
+}
+
+.username-form .error {
+  color: #ff5252;
+  font-size: 14px;
+  margin-top: -5px;
+  text-align: left;
+}
+
+
+
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes glowPulse {
+  0% { text-shadow: 0 0 10px #00c853; }
+  50% { text-shadow: 0 0 20px #00e676; }
+  100% { text-shadow: 0 0 10px #00c853; }
+}

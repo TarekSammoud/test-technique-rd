@@ -1,0 +1,106 @@
+/* --- Existing Desktop Layout --- */
+#board-container {
+  display: flex;
+  min-height: 100vh;
+  /* full viewport height */
+}
+
+#menu {
+  width: 180px;
+  padding: 20px;
+  box-sizing: border-box;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: sans-serif;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+#content {
+  flex: 1;
+  /* take remaining space */
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* center grid horizontally */
+  justify-content: flex-start;
+  /* start at top */
+}
+
+/* --- Mobile adjustments --- */
+@media (max-width: 600px) {
+  #board-container {
+    flex-direction: column;
+  }
+
+  #menu {
+    position: fixed;
+    top: 0;
+    left: -220px;
+    width: 200px;
+    height: 100%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.9);
+    flex-direction: column;
+    gap: 20px;
+    z-index: 1000;
+    transition: left 0.3s ease;
+  }
+
+  #menu.open {
+    left: 0;
+  }
+
+  #content {
+    margin-left: 0;
+    padding-top: 80px;
+    /* leave room for timer */
+  }
+
+  .burger-icon {
+    display: block;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 28px;
+    color: #fff;
+    z-index: 1001;
+    cursor: pointer;
+  }
+
+  .mobile-timer {
+    display: block;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 18px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 5px 10px;
+    border-radius: 8px;
+
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+}
+
+@media (min-width: 601px) {
+
+  .mobile-timer,
+  .burger-icon {
+    display: none !important;
+  }
+}
