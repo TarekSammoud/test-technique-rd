@@ -51,11 +51,11 @@ Exemple de corps pour POST /scores :
 }
 
 Captures:
-![Main Menu](./.screenshots/main-menu.jpg "Main Menu")
-![Main Mobile](./.screenshots/main-mobile.jpg "Main Mobile")
-![Game](./.screenshots/game.jpg "Game")
-![Game Mobile](./.screenshots/game-mobile.jpg "Game Mobile")
-![Win](./.screenshots/win.jpg "Win")
+![Main Menu](./.screenshots/main-menu.png "Main Menu")
+![Main Mobile](./.screenshots/main-mobile.png "Main Mobile")
+![Game](./.screenshots/game.png "Game")
+![Game Mobile](./.screenshots/game-mobile.png "Game Mobile")
+![Win](./.screenshots/win.png "Win")
 
 
 Notes:
