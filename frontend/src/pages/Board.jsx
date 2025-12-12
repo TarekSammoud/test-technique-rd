@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
-import Card from "./Card";
-import MyStopwatch from "./MyStopWatch";
+import Card from "../components/Card";
+import MyStopwatch from "../components/MyStopWatch";
 import "../css/Board.css";
 import { useNavigate } from "react-router-dom";
-import GameOver from "./GameOver";
+import GameOver from "../components/GameOver";
 import NotFound from "./NotFound";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimesCircle } from "@fortawesome/free-solid-svg-icons";

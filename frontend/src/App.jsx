@@ -1,8 +1,8 @@
 import { Router, Routes, Route } from "react-router-dom";
 import './App.css'
-import Board from './components/Board'
+import Board from './pages/Board'
 import LandingPage from './pages/LandingPage'
-import NotFound from "./components/NotFound";
+import NotFound from "./pages/NotFound";
 import Footer from "./components/Footer";
 
 function App() {
