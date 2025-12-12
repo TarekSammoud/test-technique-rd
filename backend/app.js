@@ -4,6 +4,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { connectDB } from './config/db.js';
 import scoresRoutes from './routes/Scores.js';
+import cors from 'cors';
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -13,6 +14,7 @@ const app = express();
 
 await connectDB();
 
+app.use(cors());
 app.use(express.json());
 
 app.use('/scores', scoresRoutes);

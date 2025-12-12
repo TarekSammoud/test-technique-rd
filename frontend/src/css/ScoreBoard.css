@@ -1,32 +1,62 @@
+/* Container */
 .scoreboard-container {
   text-align: center;
-  padding: 10px 0;
-  max-height: 400px;
+  padding: 8px;
+  max-height: 250px; /* smaller for modal */
   overflow-y: auto;
-  animation: fadeInScale 0.5s ease-out;
+  background: #111;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  animation: fadeInScale 0.3s ease-out;
+  margin: 0 auto;
+  width: 100%;
 }
 
+.filter-container {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.filter-container select {
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.filter-container select:hover {
+  background-color: #555;
+}
+/* Table */
 .scoreboard-table {
   width: 100%;
   border-collapse: collapse;
-  margin: 0 auto;
-  font-size: 16px;
+  font-size: 12px;
   color: #fff;
-  transition: transform 0.3s;
 }
 
 .scoreboard-table th,
 .scoreboard-table td {
-  border: 1px solid #ccc;
-  padding: 8px;
+  padding: 6px;
+  border: 1px solid #333;
+  text-align: center;
 }
 
 .scoreboard-table th {
-  background-color: #333;
+  background-color: #222;
+  font-weight: 600;
 }
 
 .scoreboard-table tbody tr:nth-child(even) {
-  background-color: #222;
+  background-color: #1b1b1b;
 }
 
 .scoreboard-table tbody tr:nth-child(odd) {
@@ -34,14 +64,36 @@
 }
 
 .scoreboard-table tbody tr:hover {
-  background-color: #444;
+  background-color: #333;
+  transform: scale(1.01);
   transition: transform 0.2s, background-color 0.2s;
+  cursor: pointer;
 }
 
+/* Highlight top 3 */
+.scoreboard-table tbody tr:first-child td {
+  background-color: #ffd700; /* Gold */
+  color: #000;
+  font-weight: bold;
+}
+
+.scoreboard-table tbody tr:nth-child(2) td {
+  background-color: #c0c0c0; /* Silver */
+  color: #000;
+  font-weight: bold;
+}
+
+.scoreboard-table tbody tr:nth-child(3) td {
+  background-color: #cd7f32; /* Bronze */
+  color: #000;
+  font-weight: bold;
+}
+
+/* Animations */
 @keyframes fadeInScale {
   0% {
     opacity: 0;
-    transform: scale(0.8);
+    transform: scale(0.9);
   }
   100% {
     opacity: 1;
@@ -49,13 +101,11 @@
   }
 }
 
-.scoreboard-table th,
-.scoreboard-table td {
-  font-size: 14px;
-}
-
+/* Responsive for very small modals */
 @media (max-width: 480px) {
-  .scoreboard-table {
-    font-size: 12px;
+  .scoreboard-table th,
+  .scoreboard-table td {
+    font-size: 10px;
+    padding: 4px;
   }
 }
