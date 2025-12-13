@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 const ScoreSchema = new mongoose.Schema({
-    username: { type: String, required: true },
+    username: { type: String, required: true, unique:true },
     coups: { type: Number, required: true },
     timeInSeconds: { type: Number },
     difficulty: { type: Number },

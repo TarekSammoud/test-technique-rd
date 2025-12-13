@@ -15,12 +15,35 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
     try {
         const { username, coups, timeInSeconds, difficulty } = req.body;
-        const score = new Score({ username, coups, timeInSeconds, difficulty });
+
+        const score = new Score({
+            username,
+            coups,
+            timeInSeconds,
+            difficulty
+        });
+
         await score.save();
-        res.json({ success: true, message: 'Score saved' });
+
+        res.status(201).json({
+            success: true,
+            message: "Score enregistré avec succès"
+        });
+
     } catch (err) {
-        res.status(500).json({ success: false, message: err.message });
+        if (err.code === 11000) {
+            return res.status(400).json({
+                success: false,
+                message: "Ce nom d'utilisateur existe déjà"
+            });
+        }
+
+        res.status(500).json({
+            success: false,
+            message: "Erreur lors de l'enregistrement du score"
+        });
     }
 });
+
 
 export default router;
